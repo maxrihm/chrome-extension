@@ -1,0 +1,46 @@
+{
+    "manifest_version": 2,
+    "name": "Top Posts Viewer",
+    "version": "1.0",
+    "description": "Launch a new tab with top posts from any subreddit.",
+    "permissions": [
+        "activeTab",
+        "clipboardRead"
+    ],
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["js/content.js"]
+        }
+      ],
+    "browser_action" : { 
+        "default_icon" : "images/icon.png"
+    },
+    "commands": {
+        "toggle-feature-one": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+2"
+          },
+          "description": "Toggle feature 1",
+          "global": true
+        },
+        "toggle-feature-two": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+3"
+          },
+          "description": "Toggle feature 2",
+          "global": true
+        }
+      },
+    "icons": {
+        "16": "images/icon.png",
+        "32": "images/icon.png",
+        "48": "images/icon.png",
+        "128":"images/icon.png"
+    }
+}
